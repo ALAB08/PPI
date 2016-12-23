@@ -9,6 +9,15 @@
         };
     };
 
+    function PreviewImagePartner() {
+        var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("uploadImagePartner").files[0]);
+
+        oFReader.onload = function (oFREvent) {
+            document.getElementById("partnerImagePreview").src = oFREvent.target.result;
+        };
+    };
+
 </script>
 
 <!--

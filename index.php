@@ -6,9 +6,7 @@
 
 <head>
 	<title>PPI | Home</title>
-	<link rel="icon" type="img/ico" href="img/PPI_Logo.ico">
-	<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<?php include("head.php"); ?>
 </head>
 
 <body class="gray">
@@ -25,6 +23,7 @@
 				</center>
 			</div>
 		</div>
+		<?php footer(); ?>
 	</div>	
 </body>
 

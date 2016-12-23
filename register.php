@@ -7,9 +7,7 @@
 
 <head>
 	<title>PPI | CREATE ACCOUNT</title>
-	<link rel="icon" type="img/ico" href="img/PPI_Logo.ico">
-	<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<?php include("head.php"); ?>
 </head>
 
 <body class="gray">
@@ -27,22 +25,12 @@
 						<table border="0" width="100%">
 							<tr>
 								<td>Lastname:</td>
-								<td><input type="text" name="lastname" class="textbox" value="<?= !empty($_POST["lastname"]) ?$_POST["lastname"] : ''?>" required ></td>
+								<td><input type="text" name="last_name" class="textbox" value="<?= !empty($_POST["last_name"]) ?$_POST["last_name"] : ''?>" required ></td>
 							</tr>
 
 							<tr>
 								<td>Firstname:</td>
-								<td><input type="text" name="firstname" class="textbox" value="<?= !empty($_POST["firstname"]) ?$_POST["firstname"] : ''?>" required></td>
-							</tr>
-
-							<tr>
-								<td>Username:</td>
-								<td><input type="text" name="username" class="textbox" value="<?= !empty($_POST["username"]) ?$_POST["username"] : ''?>" required></td>
-							</tr>
-
-							<tr>
-								<td>Password:</td>
-								<td><input type="password" name="password" class="textbox" value="<?= !empty($_POST["password"]) ?$_POST["username"] : ''?>" required></td>
+								<td><input type="text" name="first_name" class="textbox" value="<?= !empty($_POST["first_name"]) ?$_POST["first_name"] : ''?>" required></td>
 							</tr>
 
 							<tr>
@@ -58,11 +46,21 @@
 							<tr>
 								<td>Admin Type:</td>
 								<td><select name="admin_type">
-									<option value="Super Admin">Super Admin</option>
-									<option value="Administrator">Administrator</option>
-									<option value="Staff">Staff</option>
+										<option value="Super Admin">Super Admin</option>
+										<option value="Administrator">Administrator</option>
+										<option value="Staff">Staff</option>
 									</select>
 								</td>
+							</tr>
+
+							<tr>
+								<td>Username:</td>
+								<td><input type="text" name="username" class="textbox" value="<?= !empty($_POST["username"]) ?$_POST["username"] : ''?>" required></td>
+							</tr>
+
+							<tr>
+								<td>Password:</td>
+								<td><input type="password" name="password" class="textbox" value="<?= !empty($_POST["password"]) ?$_POST["username"] : ''?>" required></td>
 							</tr>
 						</table>
 					</div>
@@ -77,7 +75,10 @@
 					</div>
 				</div>
 			</form>
+
 		</div>
+
+		<?php footer(); ?>
 	</div>	
 </body>
 
@@ -102,8 +103,8 @@
        				}
      		}
 
-			$firstname = $_POST['firstname'];
-			$lastname = $_POST['lastname'];
+			$first_name = $_POST['first_name'];
+			$last_name = $_POST['last_name'];
 			$username = $_POST['username'];
 			$password = $_POST['password'];
 			$position = $_POST['position'];
@@ -124,13 +125,14 @@
 
   			if(move_uploaded_file($temp_name,$path.$target_path)) {
 
-				$registerAdminSQL = "INSERT INTO admintbl(lastname, firstname, username, password, position, admin_type,admin_photo) VALUES('".$lastname."', '".$firstname."', '".$username."', '".$password."', '".$position."', '".$admin_type."', '".$target_path."')";
-				$registerAdminQuery = mysqli_query($connection, $registerAdminSQL);
+				$sql = "INSERT INTO tbl_admin (last_name, first_name, position, admin_type, username, password, photo) VALUES('".$last_name."', '".$first_name."', '".$position."', '".$admin_type."', '".$username."', '".$password."', '".$target_path."')";
+				$query = mysqli_query($connection, $sql);
 
-				if($registerAdminQuery){
-					echo "<script>alert('Congratulations! Youre registered to Philippine Press Institute')</script>";
+				if($query){
+					echo "<script>alert('Congratulations! Your account is save on the system')</script>";
+					echo "<script>window.location.href='login.php'</script>";
 				}else{
-					echo "<script>alert('Failed to register! Make sure that you choose your photo.')</script>";
+					echo "<script>alert('Failed to create an account! Make sure that you choose your photo.')</script>";
 					echo mysqli_error($connection);
 				}
 			}

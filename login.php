@@ -6,9 +6,7 @@
 
 <head>
 	<title>PPI | LOGIN</title>
-	<link rel="icon" type="img/ico" href="img/PPI_Logo.ico">
-	<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<?php include("head.php"); ?>
 </head>
 
 <body class="gold">
@@ -31,9 +29,12 @@
 					<input type="password" name="password" class="textbox" value="<?= !empty($_POST["password"]) ?$_POST["password"] : ''   ?>" required>
 
 					<input type="submit" name="login" value="Login">
+
+					<button onclick="window.location.href='register.php'">Create Account</button>
 				</form>
 			</div>
 
+			<?php footer(); ?>
 		</div>
 	</div>	
 </body>
@@ -46,14 +47,14 @@
 		$username = filter_var($_POST['username'],FILTER_SANITIZE_STRING);
 		$password = filter_var($_POST['password'],FILTER_SANITIZE_STRING);
 
-		$loginSQL= "SELECT * FROM admintbl WHERE username = '".$username."' && password = '".$password."'";
-		$loginQuery = mysqli_query($connection, $loginSQL);
+		$sql= "SELECT * FROM tbl_admin WHERE username = '".$username."' && password = '".$password."'";
+		$query = mysqli_query($connection, $sql);
 
-		if(mysqli_num_rows($loginQuery)==0){
+		if(mysqli_num_rows($query)==0){
         	echo("<script>alert('Wrong Username or password!');</script>");
       	}else{
-			echo "<script>alert('Successfully Login');</script>";
-		 	echo "<script>window.location.href='register.php';</script>";  
+			echo "<script>alert('Welcome '+'".$username."');</script>";
+		 	echo "<script>window.location.href='home.php';</script>";  
      	}
 	}
 
