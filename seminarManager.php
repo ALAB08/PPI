@@ -74,7 +74,7 @@
 		</div>
 		
 	</div>	
-
 </body>
+		<?php floatButtonsSeminarManager(); ?>
 
 </html>

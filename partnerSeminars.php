@@ -36,8 +36,9 @@
 				?>
 					<div class="row-grid">
 						<div class="col-sm-3 col-md-3">
-							<a href="seminar.php"><img src="img/PPI_BackgroundNoBorder.jpg" width="100%" class="banner"></a>
-
+							
+								<a href="documentation.php"><img src="img/PPI_BackgroundNoBorder.jpg" width="100%" class="banner"></a>
+							
 							<div class="dropdown">
 							    <img src="img/Settings.png" class="dropdown-toggle moveBanner" data-toggle="dropdown">
 								<br><br><br>
@@ -48,7 +49,7 @@
 							    </ul>
 						    </div>
 
-						    <div class="dropdown">
+						    <div class="dropdownsa">
 							    <button class="btn btn-warning dropdown-toggle width" type="button" id="documentation" data-toggle="dropdown">Documentation
 							    <span class="caret"></span></button>
 							    
@@ -99,8 +100,8 @@
 				?>
 			</div>
 		</div>
-		
 	</div>	
+		<?php floatButtonsPartnerSeminars(); ?>
 
 </body>
 

@@ -102,6 +102,11 @@ body.goldNoBorder{
 	border-radius: 50%;
 	background-color: transparent;
 	margin: 0 auto;
+	filter: brightness(0) invert(1);
+}
+
+.profile img{
+	filter: brightness(0) invert(1);
 }
 
 .header2{
@@ -354,7 +359,7 @@ body.goldNoBorder{
   right: 20px;
 }
 
-#home, #manager, #back{
+#second, #third, #fourth, #fifth, #sixth{
 	border-radius: 50%;
 	height: 75px;
 	width: 75px;
@@ -371,17 +376,25 @@ body.goldNoBorder{
 	box-shadow: 1px 1px 1px 1px black;
 }
 
-#home{
-  bottom: 100px
+#second{
+	bottom: 100px
 }
 
-#manager{
-  bottom: 180px
+#third{
+	bottom: 180px
 }
 
-#back{
-  bottom: 260px
+#fourth{
+	bottom: 260px
 }	
+
+#fifth{
+	bottom: 340px;
+}
+
+#sixth{
+	bottom: 420px;
+}
 
 .mini img{
 	width: 70%;
@@ -628,7 +641,18 @@ body.goldNoBorder{
 	padding-left: 15px;
 }
 
+
 .banner{
+	height: 350px;
+	margin-top: 10%;
+	background-color: white;
+	border-radius: 5px;
+	padding: 5px;
+	box-shadow: 1px 1px 4px 1px black;
+	float: left;
+}
+
+.bannero{
 	height: 350px;
 	margin-top: 10%;
 	background-color: white;
@@ -636,7 +660,6 @@ body.goldNoBorder{
 	padding: 5px;
 	float: left;
 	box-shadow: 1px 1px 4px 1px black;
-
 }
 
 .moveBanner{
@@ -650,6 +673,8 @@ body.goldNoBorder{
 
 .width{
 	width: 100%;
+	float: left;
+	margin-top: 0px;
 }
 
 
@@ -739,6 +764,11 @@ body.goldNoBorder{
 	height: 38px;
 	padding: 0px 10px;
 	box-shadow: 1px 1px 1px 1px black;
+}
+
+.dropdownsa ul{
+	z-index: 100000000000000;
+
 }
 
 

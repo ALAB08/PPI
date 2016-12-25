@@ -1,5 +1,5 @@
 <link rel="icon" type="img/ico" href="img/PPI_Logo.ico">
-<link rel="stylesheet" type="text/css" href="css/styles.css">
+<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
@@ -52,10 +52,10 @@
 ?>
     <div class="mini">
       <div class="btn-group-sm hidden" id="mini-fab">
-        <a href="partnerManager.php" class="btn btn-warning btn-fab" data-toggle="tooltip" data-placement="left" data-original-title="Partner Manager"id="manager">
+        <a href="partnerManager.php" class="btn btn-warning btn-fab" data-toggle="tooltip" data-placement="left" data-original-title="Partner Manager" id="third">
          	<img src = "img/Manager.png">	
         </a>
-        <a href="home.php" class="btn btn-danger btn-fab" data-toggle="tooltip" data-placement="left" data-original-title="Home" id="home">
+        <a href="home.php" class="btn btn-danger btn-fab" data-toggle="tooltip" data-placement="left" data-original-title="Home" id="second">
           	<img src = "img/Home.png">
         </a>
       </div>
@@ -80,10 +80,111 @@
 ?>
     <div class="mini">
       <div class="btn-group-sm hidden" id="mini-fab">
-        <a href="partners.php" class="btn btn-info btn-fab" data-toggle="tooltip" data-placement="left" data-original-title="Back" title="" id="manager">
+        <a href="partners.php" class="btn btn-info btn-fab" data-toggle="tooltip" data-placement="left" data-original-title="Back" title="" id="third">
             <img src = "img/Back.png">
         </a>
-        <a href="home.php" class="btn btn-danger btn-fab" data-toggle="tooltip" data-placement="left" data-original-title="Home" title="" id="home">
+        <a href="home.php" class="btn btn-danger btn-fab" data-toggle="tooltip" data-placement="left" data-original-title="Home" title="" id="second">
+          	<img src = "img/Home.png">
+        </a>
+      </div>
+
+      <div class="btn-group">
+        <a href="javascript:void(0)" class="btn btn-primary btn-fab" id="main">
+          	<img src = "img/Menu.png">
+        </a>
+      </div>
+
+    </div>
+
+	<script type="text/javascript" src="js/index.js"></script>
+
+<?php
+	}
+?>
+
+
+<?php
+	function floatButtonsPartnerMenu(){
+?>
+    <div class="mini">
+      <div class="btn-group-sm hidden" id="mini-fab">
+        <a href="partners.php" class="btn btn-info btn-fab" data-toggle="tooltip" data-placement="left" data-original-title="Back" title="" id="third">
+            <img src = "img/Back.png">
+        </a>
+        <a href="home.php" class="btn btn-danger btn-fab" data-toggle="tooltip" data-placement="left" data-original-title="Home" title="" id="second">
+          	<img src = "img/Home.png">
+        </a>
+      </div>
+
+      <div class="btn-group">
+        <a href="javascript:void(0)" class="btn btn-primary btn-fab" id="main">
+          	<img src = "img/Menu.png">
+        </a>
+      </div>
+
+    </div>
+
+	<script type="text/javascript" src="js/index.js"></script>
+
+<?php
+	}
+?>
+
+
+<?php
+	function floatButtonsPartnerSeminars(){
+?>
+    <div class="mini">
+      <div class="btn-group-sm hidden" id="mini-fab">
+      <a href="partnerMenu.php" class="btn btn-info btn-fab" data-toggle="tooltip" data-placement="left" data-original-title="Back" id="sixth">
+         	<img src = "img/Back.png">	
+        </a>
+       <a href="partnerSpecialAwards.php" class="btn btn-success btn-fab" data-toggle="tooltip" data-placement="left" data-original-title="Special Awards" id="fifth">
+         	<img src = "img/SpecialAwards.png">	
+        </a>
+       <a href="partnerAwards.php" class="btn btn-inverse btn-fab" data-toggle="tooltip" data-placement="left" data-original-title="Awards" id="fourth">
+         	<img src = "img/Awards.png">	
+        </a>
+        <a href="seminarManager.php" class="btn btn-warning btn-fab" data-toggle="tooltip" data-placement="left" data-original-title="Seminar Manager" id="third">
+         	<img src = "img/Seminars.png">	
+        </a>
+        <a href="home.php" class="btn btn-danger btn-fab" data-toggle="tooltip" data-placement="left" data-original-title="Home" id="second">
+          	<img src = "img/Home.png">
+        </a>
+      </div>
+
+      <div class="btn-group">
+        <a href="javascript:void(0)" class="btn btn-primary btn-fab" id="main">
+          	<img src = "img/Menu.png">
+        </a>
+      </div>
+
+    </div>
+
+	<script type="text/javascript" src="js/index.js"></script>
+
+<?php
+	}
+?>
+
+<?php
+	function floatButtonsSeminarManager(){
+?>
+    <div class="mini">
+      <div class="btn-group-sm hidden" id="mini-fab">
+      <a href="partnerMenu.php" class="btn btn-info btn-fab" data-toggle="tooltip" data-placement="left" data-original-title="Back" id="sixth">
+         	<img src = "img/Back.png">	
+        </a>
+       <a href="partnerSpecialAwards.php" class="btn btn-success btn-fab" data-toggle="tooltip" data-placement="left" data-original-title="Special Awards" id="fifth">
+         	<img src = "img/SpecialAwards.png">	
+        </a>
+       <a href="partnerAwards.php" class="btn btn-inverse btn-fab" data-toggle="tooltip" data-placement="left" data-original-title="Awards" id="fourth">
+         	<img src = "img/Awards.png">	
+        </a>
+        <a href="partnerSeminars.php" class="btn btn-warning btn-fab" data-toggle="tooltip" data-placement="left" data-original-title="Seminar Manager" id="third">
+         	<img src = "img/Seminars.png">	
+        </a>
+        <a href="home.php" class="btn btn-danger btn-fab" data-toggle="tooltip" data-placement="left" data-original-title="Home" id="second">
           	<img src = "img/Home.png">
         </a>
       </div>

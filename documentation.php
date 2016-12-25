@@ -16,18 +16,15 @@
 		<?php header2(); ?>
 		<div class="container">
 			<div class="leftSideDetails">
+				<div class="logo">
+					<img src="">
+				</div>
 				<div class="previewBanner">
 					<img src="">
 				</div>
 			</div>
 			
 			<div class="rightSideDetails">
-				<p>Aldwin Corporation</p>
-				<input type="text" class="search" placeholder="Search">
-				<div class="detailsButtons">
-					<button type="button" onclick="location.href='partnerSeminars.php'" class="seminarButton">SEMINARS</button>
-					<button type="button" onclick="location.href=''" class="awardsButton">AWARDS</button>
-					<button type="button" onclick="location.href=''" class="specialButtons">SPECIAL AWARDS</button>
 
 				</div>
 			</div>

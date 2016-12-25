@@ -18,6 +18,15 @@
         };
     };
 
+    function PreviewImageSeminar() {
+        var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("uploadImageSeminar").files[0]);
+
+        oFReader.onload = function (oFREvent) {
+            document.getElementById("seminarImagePreview").src = oFREvent.target.result;
+        };
+    };
+
 </script>
 
 <!--
