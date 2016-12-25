@@ -1,3 +1,4 @@
+
 body.gray{
 	background-image: url(../img/PPI_Home_Background.jpg);
 	background-size: 100% 100%;
@@ -769,6 +770,73 @@ body.goldNoBorder{
 .dropdownsa ul{
 	z-index: 100000000000000;
 
+}
+
+
+/** DOCUMENTATION **/
+
+.previewBanner2{
+	width: 100%;
+	height: 350px;
+	box-shadow: 1px 1px 1px 1px black;
+	border-radius: 10px;
+	background-color: rgba(255,255,255,.5);
+	float: left;
+}
+
+ .logo2{
+ 	width: 100%;
+ 	height: 100px;
+ 	box-shadow: 1px 1px 1px 1px black;
+ 	background-color: rgba(255,255,255,0.8);
+ 	float: left;
+ 	margin-bottom: 20px;
+ }
+
+.seminarTitle{
+	text-align: center;
+}
+
+.hanap2{
+	width: 100%;
+	float: left;
+	padding-top: 15px;
+	height: 52px;
+}
+
+.hanap2 input[type="text"]{
+	margin: 0 auto;
+	display: block;
+	width: 100%;
+	height: 35px;
+	border-radius: 5px;
+	border: none;
+	box-shadow: 1px 1px 1px 1px black;
+	padding-left: 15px;
+}
+
+.docuButtons{
+	float: left;
+	width: 100%;
+}
+
+.docuButtons button{
+	width: 100%;
+	background-color: #4A452A;
+	box-shadow: 1px 1px 2px 1px black;
+	color: white;
+	border: none;
+	border-radius: 7px;
+	height: 50px;
+	margin-top: 20px;
+	font-size: 16px;
+}
+
+
+
+.docuButtons button:hover{
+	background-color: #312E1C;
+	transition: background-color 0.8s;
 }
 
 
