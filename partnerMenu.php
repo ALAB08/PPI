@@ -46,3 +46,5 @@
 </body>
 
 </html>
+
+<iframe src="test.php"></iframe>
