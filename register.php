@@ -2,8 +2,9 @@
 
 <html>
 
-<?php include("connection.php"); ?>
 <?php include("javascript.php"); ?>
+<?php include("queries.php");?>
+<?php session("register") ?>
 
 <head>
 	<title>PPI | CREATE ACCOUNT</title>
@@ -20,6 +21,7 @@
 
 			<div class="create_container">
 				<p>CREATE ACCOUNT</p>
+				<?php echo $_SESSION['super_id']; ?>
 				<form action="" method="POST" enctype="multipart/form-data">
 					<div class="right_container">
 						<table border="0" width="100%">
@@ -72,6 +74,7 @@
 
 					<div class="register_buttons">
 						<button type="submit" class="right" name="register">Save Registration</button>
+						<button type="button" class="right" name="register" style="background-color:transparent; color: #4a442a; border: 1px solid #4a442a; ?>" onclick="location.href='login.php'">Cancel</button>
 					</div>
 				</div>
 			</form>
@@ -83,60 +86,3 @@
 </body>
 
 </html>
-
-
-
-<?php
-	if(isset($_POST['register'])){
-
-		if (empty($_FILES["adminImage"]["name"])){
-    		echo "";
-		}else{
-      		function GetImageExtension($imagetype){
-       			if(empty($imagetype)) return false;
-       				switch($imagetype){
-			           case 'image/bmp': return '.bmp';
-			           case 'image/gif': return '.gif';
-			           case 'image/jpeg': return '.jpg';
-			           case 'image/png': return '.png';
-			           default: return false;
-       				}
-     		}
-
-			$first_name = $_POST['first_name'];
-			$last_name = $_POST['last_name'];
-			$username = $_POST['username'];
-			$password = $_POST['password'];
-			$position = $_POST['position'];
-			$admin_type = $_POST['admin_type'];
-
-			$file_name=$_FILES["adminImage"]["name"];
-			$temp_name=$_FILES["adminImage"]["tmp_name"];
-			$imgtype=$_FILES["adminImage"]["type"];
-			$ext= GetImageExtension($imgtype);
-			$imagename=$_FILES["adminImage"]["name"];
-			
-
-			$target_path = "ppi/user_images/".$imagename;
-			$path="/Applications/XAMPP/xamppfiles/htdocs/";
-			
-    		//$path="C://xampp/htdocs/";
-    		//$target_path = "ppi/images_data".$imagename;
-
-  			if(move_uploaded_file($temp_name,$path.$target_path)) {
-
-				$sql = "INSERT INTO tbl_admin (last_name, first_name, position, admin_type, username, password, photo) VALUES('".$last_name."', '".$first_name."', '".$position."', '".$admin_type."', '".$username."', '".$password."', '".$target_path."')";
-				$query = mysqli_query($connection, $sql);
-
-				if($query){
-					echo "<script>alert('Congratulations! Your account is save on the system')</script>";
-					echo "<script>window.location.href='login.php'</script>";
-				}else{
-					echo "<script>alert('Failed to create an account! Make sure that you choose your photo.')</script>";
-					echo mysqli_error($connection);
-				}
-			}
-     	}
-	}
-
-?>

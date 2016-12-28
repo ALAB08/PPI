@@ -2,7 +2,8 @@
 
 <html>
 
-<?php include("connection.php"); ?>
+<?php include("queries.php"); ?>
+<?php session("regular");?>
 
 <head>
 	<title>PPI | Category</title>
@@ -17,7 +18,6 @@
 			<div class="PPILogo2 PPILogo3">
 				<img src="img/PPI_Logo.png">
 			</div>
-
 			<div class="index_buttons">
 				<center>
 					<button onclick="window.location.href='partners.php'" class="left left2">PARTNERS</button>

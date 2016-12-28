@@ -8,6 +8,9 @@
 <head>
 	<title>PPI | Partner Seminars</title>
 	<?php include("head.php"); ?>
+	<?php include("queries.php"); ?>
+	<?php session("regular"); ?>
+	<?php include("modals.php"); ?>
 
 </head>
 
@@ -44,8 +47,9 @@
 								<br><br><br>
 
 							    <ul class="dropdown-menu" role="menu">
-								    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Edit</a></li>
-								    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Delete</a></li>
+							    	<li role="presentation"><a role="menuitem" tabindex="-1" data-toggle="modal" data-target="#seminarDetails">Details</a></li>
+								    <li role="presentation"><a role="menuitem" tabindex="-1" href="seminarUpdate.php">Update</a></li>
+								    <li role="presentation"><a role="menuitem" tabindex="-1" data-toggle="modal" data-target="#seminarDelete">Remove</a></li>
 							    </ul>
 						    </div>
 

@@ -8,6 +8,8 @@
 <head>
 	<title>PPI | Partner Menu</title>
 	<?php include("head.php"); ?>
+	<?php include("queries.php"); ?>
+	<?php session("regular"); ?>
 
 </head>
 
@@ -15,9 +17,14 @@
 	<div class="container-fluid">
 		<?php header2(); ?>
 		<div class="container">
+			<?php 
+				$sql = "SELECT * FROM tbl_partner WHERE id = '".$_GET['id']."'";
+				$query = mysqli_query($connection, $sql);
+				$result = mysqli_fetch_assoc($query);
+			?>
 			<div class="leftSideDetails">
 				<div class="previewBanner">
-					<img src="">
+					<img src="<?php echo $result['partner_banner']; ?>" width="100%">
 				</div>
 			</div>
 			

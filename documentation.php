@@ -8,6 +8,8 @@
 <head>
 	<title>PPI | Partner Menu</title>
 	<?php include("head.php"); ?>
+	<?php include("queries.php"); ?>
+	<?php session("regular"); ?>
 
 </head>
 

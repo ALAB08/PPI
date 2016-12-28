@@ -2,13 +2,16 @@
 
 <html>
 
-<?php include("connection.php"); ?>
-
 <head>
-	<title>PPI | LOGIN</title>
+	<title>PPI | Log In</title>
 	<?php include("head.php"); ?>
 </head>
 
+	<?php include("queries.php"); ?>
+	<?php include("modals.php"); ?>
+	<?php unset($_SESSION['super_id']); ?>
+
+	
 <body class="gold">
 	<div class="container-fluid">
 		<div class="container">
@@ -30,7 +33,7 @@
 
 					<input type="submit" name="login" value="Login">
 
-					<button onclick="window.location.href='register.php'">Create Account</button>
+					<button type="button" data-toggle="modal" data-target="#verifyAccess">Create Account</button>
 				</form>
 			</div>
 
@@ -40,22 +43,3 @@
 </body>
 
 </html>
-
-
-<?php
-	if(isset($_POST['login'])){
-		$username = filter_var($_POST['username'],FILTER_SANITIZE_STRING);
-		$password = filter_var($_POST['password'],FILTER_SANITIZE_STRING);
-
-		$sql= "SELECT * FROM tbl_admin WHERE username = '".$username."' && password = '".$password."'";
-		$query = mysqli_query($connection, $sql);
-
-		if(mysqli_num_rows($query)==0){
-        	echo("<script>alert('Wrong Username or password!');</script>");
-      	}else{
-			echo "<script>alert('Welcome '+'".$username."');</script>";
-		 	echo "<script>window.location.href='home.php';</script>";  
-     	}
-	}
-
-?>

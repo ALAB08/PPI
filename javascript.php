@@ -9,23 +9,44 @@
         };
     };
 
-    function PreviewImagePartner() {
+    function PreviewImagePartnerBanner() {
         var oFReader = new FileReader();
-        oFReader.readAsDataURL(document.getElementById("uploadImagePartner").files[0]);
+        oFReader.readAsDataURL(document.getElementById("uploadImagePartnerBanner").files[0]);
 
         oFReader.onload = function (oFREvent) {
-            document.getElementById("partnerImagePreview").src = oFREvent.target.result;
+            document.getElementById("partnerBannerImagePreview").src = oFREvent.target.result;
         };
     };
 
-    function PreviewImageSeminar() {
+    function PreviewImagePartnerLogo() {
         var oFReader = new FileReader();
-        oFReader.readAsDataURL(document.getElementById("uploadImageSeminar").files[0]);
+        oFReader.readAsDataURL(document.getElementById("uploadImagePartnerLogo").files[0]);
 
         oFReader.onload = function (oFREvent) {
-            document.getElementById("seminarImagePreview").src = oFREvent.target.result;
+            document.getElementById("partnerLogoImagePreview").src = oFREvent.target.result;
+            document.getElementById("partnerLogo2ImagePreview").src = oFREvent.target.result;
         };
     };
+
+    function PreviewImageSeminarBanner() {
+        var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("uploadImageSeminarBanner").files[0]);
+
+        oFReader.onload = function (oFREvent) {
+            document.getElementById("seminarBannerImagePreview").src = oFREvent.target.result;
+        };
+    };
+
+    function PreviewImageSeminarLogo() {
+        var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("uploadImageSeminarLogo").files[0]);
+
+        oFReader.onload = function (oFREvent) {
+            document.getElementById("seminarLogoImagePreview").src = oFREvent.target.result;
+            document.getElementById("seminarLogo2ImagePreview").src = oFREvent.target.result;
+        };
+    };
+
 
 </script>
 
