@@ -105,8 +105,8 @@
 
 <!-- SEMINAR DETAILS -->
 
-<div class="modal fade" tabindex="-1" role="dialog" id="seminarDetails">
-  <div class="modal-dialog modal-sm" role="document">
+<div class="modal fade" tabindex="-1" role="dialog" id="seminarDetails<?php echo $id; ?>">
+  <div class="modal-dialog" role="document">
     <div class="modal-content">
         <div class="modal-header modalHeaderColor">
 	        <button type="button" class="close modalCloseColor" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" style="color: white;">&times;</span></button>
@@ -126,14 +126,36 @@
 	        		<p>Mindanao Venu :</p>
 	        	</div>
 
+	        	<?php 
+
+	        	/**
+	        		if($result['areas']=="Luzon Only"){
+	        			$result['visayas']='none';
+	        			$result['mindanao']='none';
+	        		}else if($result['areas']=="Visayas Only"){
+	        			$result['luzon']='none';
+	        			$result['mindanao']='none';
+	        		}else if($result['areas']=="Mindanao Only"){
+	        			$result['visayas']='none';
+	        			$result['luzon']='none';
+	        		}
+
+	        	*/
+	        		$period_to = $result['period_to'];
+	        		$period_from = $result['period_from'];
+
+	        		$period_to=date_format((date_create($period_to)), "F d Y");
+	        		$period_from=date_format((date_create($period_from)), "F d Y");
+	        	?>
+
 	        	<div class="rightDetails">
-	        		<p>Seminar Title</p>
-	        		<p>Period Cover</p>
-	        		<p>Areas</p>
-	        		<p>Remarks</p>
-	        		<p>Luzon Venue</p>
-	        		<p>Visayas Venue</p>
-	        		<p>Mindanao Venu</p>
+	        		<p><?php echo $result['title_seminar']; ?></p>
+	        		<p><?php echo $period_to; ?> to <?php echo $period_from; ?></p>
+	        		<p><?php echo $result['areas']; ?></p>
+	        		<p><?php echo $result['remarks']; ?></p>
+	        		<p><?php echo $result['luzon']; ?></p>
+	        		<p><?php echo $result['visayas']; ?></p>
+	        		<p><?php echo $result['mindanao']; ?></p>
 	        	</div>
 	        	</div>
 	    </div>
@@ -149,7 +171,7 @@
 
 <!-- SEMINAR DELETE -->
 
-<div class="modal fade" tabindex="-1" role="dialog" id="seminarDelete">
+<div class="modal fade" tabindex="-1" role="dialog" id="seminarDelete<?php echo $id; ?>">
   <div class="modal-dialog modal-sm" role="document">
     <div class="modal-content">
         <div class="modal-header modalHeaderColor">
@@ -160,10 +182,11 @@
       	<div class="modal-body">
 	        <form action="" method="POST" enctype="multipart/form-data">
 	        	<p>Are you sure you want to delete this seminar? This cannot be undone!</p>
+	        	<input type="hidden" name="id" value="<?php echo $id; ?>">
 	    </div>
 	    <div class="modal-footer">
 	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	        <button type="submit" class="btn customSave" name="verify" style="color: white;">YES</button>
+	        <button type="submit" class="btn customSave" name="deleteSeminar" style="color: white;">YES</button>
 	        </form>	
 	     </div>
     </div>

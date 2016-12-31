@@ -9,7 +9,7 @@
 
 	<?php include("queries.php"); ?>
 	<?php include("modals.php"); ?>
-	<?php unset($_SESSION['super_id']); ?>
+	<?php //unset($_SESSION['super_id']); ?>
 
 	
 <body class="gold">

@@ -137,7 +137,7 @@
 ?>
     <div class="mini">
       <div class="btn-group-sm hidden" id="mini-fab">
-       <a href="partnerMenu.php" class="btn btn-success btn-fab" data-toggle="tooltip" data-placement="left" data-original-title="Partner Name" id="fourth">
+       <a href="partnerMenu.php?id=<?php echo $_SESSION['partner_id']; ?>" class="btn btn-success btn-fab" data-toggle="tooltip" data-placement="left" data-original-title="Partner Name" id="fourth">
          	<img src = "img/Manager.png">	
         </a>
         <a href="seminarAdd.php" class="btn btn-warning btn-fab" data-toggle="tooltip" data-placement="left" data-original-title="Add Seminar" id="third">
@@ -170,7 +170,7 @@
        <a href="partners.php" class="btn btn-success btn-fab" data-toggle="tooltip" data-placement="left" data-original-title="Partners" id="fourth">
          	<img src = "img/Manager.png">	
         </a>
-        <a href="partnerSeminars.php" class="btn btn-warning btn-fab" data-toggle="tooltip" data-placement="left" data-original-title="Seminars" id="third">
+        <a href="partnerSeminars.php?id=<?php echo $_SESSION['partner_id']; ?>" class="btn btn-warning btn-fab" data-toggle="tooltip" data-placement="left" data-original-title="Seminars" id="third">
          	<img src = "img/Seminars.png">	
         </a>
         <a href="home.php" class="btn btn-danger btn-fab" data-toggle="tooltip" data-placement="left" data-original-title="Home" id="second">

@@ -17,19 +17,26 @@
 	<div class="container-fluid">
 		<?php header2(); ?>
 		<div class="container">
+
+		<?php
+			$sql = "SELECT * from tbl_seminars WHERE id='".$_GET['id']."'";
+			$query = mysqli_query($connection, $sql);
+			$result = mysqli_fetch_assoc($query);
+		?>
+
 			<div class="leftSideDetails">
 				<div class="logo2">
-					<img src="">
+					<img src="<?php echo $result['seminar_logo']; ?>" width="100%" height="100px">
 				</div>
 				
 				<div class="previewBanner2">
-					<img src="">
+					<img src="<?php echo $result['seminar_banner']; ?>" width="100%" height="350px">
 				</div>
 			</div>
-			
+
 			<div class="rightSideDetails">
 				<div class="seminarTitle">
-					<h3>Seminar Title</h3>
+					<h3><?php echo $result['title_seminar']; ?></h3>
 				</div>
 
 				<div class="hanap2">

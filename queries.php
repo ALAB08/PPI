@@ -16,8 +16,9 @@
       			$_SESSION['id'] = $result['id'];
       			$_SESSION['username'] = $result['username'];
       		}
+      		echo "<script>window.location.href='home.php';</script>"; 
 			echo "<script>alert('Welcome '+'".$username."');</script>";
-		 	echo "<script>window.location.href='home.php';</script>";  
+		 	 
      	}
 	}
 ?>
@@ -89,8 +90,9 @@
       		while($result = mysqli_fetch_assoc($query)){
       			$_SESSION['super_id'] = $result['id'];
       		}
+      		echo "<script>window.location.href='register.php';</script>"; 
 			echo "<script>alert('Access verified '+'".$username."');</script>";
-		 	echo "<script>window.location.href='register.php';</script>";  
+		 	 
      	}
 	}
 ?>
@@ -151,7 +153,6 @@
      	}
 	}
 ?>
-
 
 
 <?php 
@@ -222,6 +223,79 @@
 	}
 ?>
 
+<?php 
+	if(isset($_POST['seminarAdd'])){
+
+		if (empty($_FILES["seminarBannerImage"]["name"]) && empty($_FILES["seminarLogoImage"]["name"])){
+    		echo "";
+		}else{
+      		function GetImageExtension($imagetype){
+       			if(empty($imagetype)) return false;
+       				switch($imagetype){
+			           case 'image/bmp': return '.bmp';
+			           case 'image/gif': return '.gif';
+			           case 'image/jpeg': return '.jpg';
+			           case 'image/png': return '.png';
+			           default: return false;
+       				}
+     		}
+
+			$title_seminar = $_POST['title_seminar'];
+			$period_from = $_POST['period_from'];
+			$period_to = $_POST['period_to'];
+			$areas = $_POST['areas'];
+			$remarks = $_POST['remarks'];
+			$luzon = $_POST['luzon'];
+			$visayas = $_POST['visayas'];
+			$mindanao = $_POST['mindanao'];
+
+			//Logo Image
+			$file_nameLogo=$_FILES["seminarLogoImage"]["name"];
+			$temp_nameLogo=$_FILES["seminarLogoImage"]["tmp_name"];
+			$imgtypeLogo=$_FILES["seminarLogoImage"]["type"];
+			$extLogo= GetImageExtension($imgtypeLogo);
+			$imagenameLogo=$_FILES["seminarLogoImage"]["name"];
+
+			$target_pathLogo = "partner_images/".$imagenameLogo;
+			$pathLogo ="/Applications/XAMPP/xamppfiles/htdocs/ppi/";
+			//End of Logo Image
+
+			//Banner Image
+			$file_nameBanner=$_FILES["seminarBannerImage"]["name"];
+			$temp_nameBanner=$_FILES["seminarBannerImage"]["tmp_name"];
+			$imgtypeBanner=$_FILES["seminarBannerImage"]["type"];
+			$extBanner= GetImageExtension($imgtypeBanner);
+			$imagenameBanner=$_FILES["seminarBannerImage"]["name"];
+
+			$target_pathBanner = "partner_images/".$imagenameBanner;
+			$pathBanner="/Applications/XAMPP/xamppfiles/htdocs/ppi/";
+			//End of Banner Image
+			
+    		//$path="C://xampp/htdocs/";
+    		//$target_path = "ppi/images_data".$imagename;
+
+  			if(move_uploaded_file($temp_nameBanner,$pathBanner.$target_pathBanner) && move_uploaded_file($temp_nameLogo, $pathLogo.$target_pathLogo)){
+
+  				//$date_added = now();
+
+				$sql = "INSERT INTO tbl_seminars (partner_id, title_seminar, period_to, period_from, areas, remarks, luzon, visayas, mindanao, seminar_logo, seminar_banner, date_added, deleted) VALUES('".$_SESSION['partner_id']."', '".$title_seminar."', '".$period_to."', '".$period_from."', '".$areas."', '".$remarks."', '".$luzon."', '".$visayas."', '".$mindanao."', '".$target_pathLogo."', '".$target_pathBanner."', now(), 'NO')";
+				$query = mysqli_query($connection, $sql);
+
+				$partner_name = $_SESSION['partner_name'];
+
+				if($query){
+					echo "<script>alert('Congratulations! You added a seminar to '.$partner_name)</script>";
+					//echo "<script>window.location.href='login.php';</script>";
+					echo "<script>window.location.href='seminarAdd.php';</script>";  
+				}else{
+					echo "<script>alert('Failed to add a partner.')</script>";
+					echo mysqli_error($connection);
+				}
+			}
+     	}
+	}
+?>
+
 
 <?php
 
@@ -239,6 +313,21 @@
 		}
 	}
 
+?>
+
+<?php
+	if(isset($_POST['deleteSeminar'])){
+		$id = $_POST['id'];
+		$sql = "UPDATE tbl_seminars SET deleted = 'YES' WHERE id = '".$id."'";
+		$query = mysqli_query($connection, $sql);
+
+		if($query){
+			echo "<script>alert('Successfully deleted a seminar')</script>";  
+		}else{
+			echo "<script>alert('Failed to delete a seminar.')</script>";
+			echo mysqli_error($connection);
+		}
+	}
 ?>
 
 
@@ -331,4 +420,99 @@
      	}
 	}
 
+?>
+
+<?php 
+	if(isset($_POST['seminarUpdate'])){
+		if (empty($_FILES["seminarBannerImage"]["name"]) && empty($_FILES["seminarLogoImage"]["name"])){
+    		
+    		$title_seminar = $_POST['title_seminar'];
+			$period_from = $_POST['period_from'];
+			$period_to = $_POST['period_to'];
+			$areas = $_POST['areas'];
+			$remarks = $_POST['remarks'];
+			$luzon = $_POST['luzon'];
+			$visayas = $_POST['visayas'];
+			$mindanao = $_POST['mindanao'];
+
+			$sql = "UPDATE tbl_seminars SET title_seminar='$title_seminar', period_to='$period_to', period_from='$period_from', areas='$areas', remarks='$remarks', luzon='$luzon', visayas='$visayas', mindanao='$mindanao' WHERE id='".$_GET['id']."'";
+			$query = mysqli_query($connection, $sql);
+
+			$partner_name = $_SESSION['partner_name'];
+
+			if($query){
+				echo "<script>alert('Congratulations! You updated a seminar to '.$partner_name)</script>";
+				//echo "<script>window.location.href='login.php';</script>";
+				//echo "<script>window.location.href='partnerSeminars.php';</script>";  
+			}else{
+				echo "<script>alert('Failed to update seminar.')</script>";
+				echo mysqli_error($connection);
+			}
+
+		}else{
+      		function GetImageExtension($imagetype){
+       			if(empty($imagetype)) return false;
+       				switch($imagetype){
+			           case 'image/bmp': return '.bmp';
+			           case 'image/gif': return '.gif';
+			           case 'image/jpeg': return '.jpg';
+			           case 'image/png': return '.png';
+			           default: return false;
+       				}
+     		}
+
+			$title_seminar = $_POST['title_seminar'];
+			$period_from = $_POST['period_from'];
+			$period_to = $_POST['period_to'];
+			$areas = $_POST['areas'];
+			$remarks = $_POST['remarks'];
+			$luzon = $_POST['luzon'];
+			$visayas = $_POST['visayas'];
+			$mindanao = $_POST['mindanao'];
+
+			//Logo Image
+			$file_nameLogo=$_FILES["seminarLogoImage"]["name"];
+			$temp_nameLogo=$_FILES["seminarLogoImage"]["tmp_name"];
+			$imgtypeLogo=$_FILES["seminarLogoImage"]["type"];
+			$extLogo= GetImageExtension($imgtypeLogo);
+			$imagenameLogo=$_FILES["seminarLogoImage"]["name"];
+
+			$target_pathLogo = "partner_images/".$imagenameLogo;
+			$pathLogo ="/Applications/XAMPP/xamppfiles/htdocs/ppi/";
+			//End of Logo Image
+
+			//Banner Image
+			$file_nameBanner=$_FILES["seminarBannerImage"]["name"];
+			$temp_nameBanner=$_FILES["seminarBannerImage"]["tmp_name"];
+			$imgtypeBanner=$_FILES["seminarBannerImage"]["type"];
+			$extBanner= GetImageExtension($imgtypeBanner);
+			$imagenameBanner=$_FILES["seminarBannerImage"]["name"];
+
+			$target_pathBanner = "partner_images/".$imagenameBanner;
+			$pathBanner="/Applications/XAMPP/xamppfiles/htdocs/ppi/";
+			//End of Banner Image
+			
+    		//$path="C://xampp/htdocs/";
+    		//$target_path = "ppi/images_data".$imagename;
+
+  			if(move_uploaded_file($temp_nameBanner,$pathBanner.$target_pathBanner) && move_uploaded_file($temp_nameLogo, $pathLogo.$target_pathLogo)){
+
+  				//$date_added = now();
+
+				$sql = "UPDATE tbl_seminars SET title_seminar='$title_seminar', period_to='$period_to', period_from='$period_from', areas='$areas', remarks='$remarks', luzon='$luzon', visayas='$visayas', mindanao='$mindanao', seminar_logo='$target_pathLogo', seminar_banner='$target_pathBanner' WHERE id='".$_GET['id']."'";
+				$query = mysqli_query($connection, $sql);
+
+				$partner_name = $_SESSION['partner_name'];
+
+				if($query){
+					echo "<script>alert('Congratulations! You updated a seminar to '.$partner_name)</script>";
+					//echo "<script>window.location.href='login.php';</script>";
+					//echo "<script>window.location.href='partnerSeminars.php';</script>";  
+				}else{
+					echo "<script>alert('Failed to update seminar.')</script>";
+					echo mysqli_error($connection);
+				}
+			}
+     	}
+	}
 ?>

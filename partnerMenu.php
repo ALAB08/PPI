@@ -21,6 +21,9 @@
 				$sql = "SELECT * FROM tbl_partner WHERE id = '".$_GET['id']."'";
 				$query = mysqli_query($connection, $sql);
 				$result = mysqli_fetch_assoc($query);
+				$_SESSION['partner_id'] = $_GET['id'];
+				$_SESSION['partner_name'] = $result['partner_name'];
+				$_SESSION['partner_logo'] = $result['partner_logo'];
 			?>
 			<div class="leftSideDetails">
 				<div class="previewBanner">
@@ -29,7 +32,7 @@
 			</div>
 			
 			<div class="rightSideDetails">
-				<p>Aldwin Corporation</p>
+				<p><?php echo $_SESSION['partner_name'];?></p>
 				<input type="text" class="search" placeholder="Search">
 				<div class="detailsButtons">
 					<button type="button" onclick="location.href='partnerSeminars.php'" class="seminarButton">SEMINARS</button>
@@ -46,5 +49,3 @@
 </body>
 
 </html>
-
-<iframe src="test.php"></iframe>

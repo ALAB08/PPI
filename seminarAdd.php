@@ -20,7 +20,7 @@
 		<div class="container">
 			<div class="leftSideSeminar">
 				<p>Add <span>Seminar</span></p><br>
-				
+			<form action="" method="POST" enctype="multipart/form-data">
                 <div class="preview">
 					<div class="logoBox">
 						<img id="seminarLogoImagePreview" class="logoPreview">
@@ -48,8 +48,8 @@
 					</ul>
 				</div>
 				<div class="textBoxes">
-					<input type="text" name="titleSeminar">
-					<input type="date"> to <input type="date">
+					<input type="text" name="title_seminar" required>
+					<input type="date" name="period_from" required> to <input type="date" name="period_to" required>
 
 					<select name="areas" id="areasCollection">
 						<option value="Luzon Only" id="luzon">Luzon Only</option>
@@ -62,22 +62,23 @@
 
 					<select name="remarks">
 						<option value="Complete">Complete</option>
-						<option value="Incomplete">Inomplete</option>
+						<option value="Incomplete" selected>Inomplete</option>
 					</select>
 
-					<input type="text" name="luzonVenue" id="luzonVenue">
-					<input type="text" name="visayasVenue" id="visayasVenue">
-					<input type="text" disabledname="mindanaoVenue" id="mindanaoVenue">
+					<input type="text" name="luzon" id="luzonVenue" value="None">
+					<input type="text" name="visayas" id="visayasVenue" value="None">
+					<input type="text" name="mindanao" id="mindanaoVenue" value="None">
 
 					<?php areas(); ?>
 
 				</div>
 
 				<div class="cmsButtons">
-					<button type="submit" class="btn-success" onclick="location.href=''">SAVE</button>
+					<button type="submit" class="btn-success" name="seminarAdd">SAVE</button>
 					<button type="button" class="btn-warning" onclick="location.href=''">CANCEL</button>
 				</div>
 			</div>
+			</form>
 		</div>
 		
 	</div>	

@@ -21,7 +21,6 @@
 
 			<div class="create_container">
 				<p>CREATE ACCOUNT</p>
-				<?php echo $_SESSION['super_id']; ?>
 				<form action="" method="POST" enctype="multipart/form-data">
 					<div class="right_container">
 						<table border="0" width="100%">
@@ -74,7 +73,8 @@
 
 					<div class="register_buttons">
 						<button type="submit" class="right" name="register">Save Registration</button>
-						<button type="button" class="right" name="register" style="background-color:transparent; color: #4a442a; border: 1px solid #4a442a; ?>" onclick="location.href='login.php'">Cancel</button>
+						<button type="submit" class="right" name="register" style="background-color:transparent; color: #4a442a; border: 1px solid #4a442a; ?>" onclick="location.href='index.php'">Cancel</button>
+
 					</div>
 				</div>
 			</form>
