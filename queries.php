@@ -39,6 +39,7 @@
 			$first_name = $result['first_name'];
 			$full_name = $first_name.' '.$last_name;
 			$position = $result['position'];
+			$admin_type = $result['admin_type'];
 
 			if($detail=="photo"){
 				echo $photo;
@@ -52,6 +53,8 @@
 				echo $first_name;
 			}else if($detail=="full_name"){
 				echo $full_name;
+			}else if($detail=="admin_type"){
+				echo $admin_type;
 			}
 	}
 

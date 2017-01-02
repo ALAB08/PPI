@@ -56,6 +56,12 @@
 	        		<p>Partnership Date :</p>
 	        	</div>
 
+	        	<?php
+	        		$partnership_date = $result['pertnership_date'];
+
+	        		$partnership_date=date_format((date_create($partnership_date)), "F d, Y");
+	        	?>
+
 	        	<div class="rightDetails">
 	        		<p><?php echo $result['partner_name']; ?></p>
 	        		<p><?php echo $result['contact_person']; ?></p>
@@ -63,7 +69,7 @@
 	        		<p><?php echo $result['address']; ?></p>
 	        		<p><?php echo $result['email']; ?></p>
 	        		<p><?php echo $result['website']; ?></p>
-	        		<p><?php echo $result['partnership_date']; ?></p>
+	        		<p><?php echo $partnership_date; ?></p>
 	        	</div>
 	        	</div>
 	    </div>
@@ -110,7 +116,7 @@
     <div class="modal-content">
         <div class="modal-header modalHeaderColor">
 	        <button type="button" class="close modalCloseColor" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" style="color: white;">&times;</span></button>
-	        <h4 class="modal-title" id="gridSystemModalLabel">Seminar Title Details</h4>
+	        <h4 class="modal-title" id="gridSystemModalLabel">Seminar Details</h4>
       	</div>
 
       	<div class="modal-body">
@@ -128,24 +134,11 @@
 
 	        	<?php 
 
-	        	/**
-	        		if($result['areas']=="Luzon Only"){
-	        			$result['visayas']='none';
-	        			$result['mindanao']='none';
-	        		}else if($result['areas']=="Visayas Only"){
-	        			$result['luzon']='none';
-	        			$result['mindanao']='none';
-	        		}else if($result['areas']=="Mindanao Only"){
-	        			$result['visayas']='none';
-	        			$result['luzon']='none';
-	        		}
-
-	        	*/
 	        		$period_to = $result['period_to'];
 	        		$period_from = $result['period_from'];
 
-	        		$period_to=date_format((date_create($period_to)), "F d Y");
-	        		$period_from=date_format((date_create($period_from)), "F d Y");
+	        		$period_to=date_format((date_create($period_to)), "F d, Y");
+	        		$period_from=date_format((date_create($period_from)), "F d, Y");
 	        	?>
 
 	        	<div class="rightDetails">
@@ -188,6 +181,53 @@
 	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 	        <button type="submit" class="btn customSave" name="deleteSeminar" style="color: white;">YES</button>
 	        </form>	
+	     </div>
+    </div>
+  </div>
+</div>
+
+<!--============== END =====================-->
+
+
+<!-- PROFILE DETAILS -->
+
+<div class="modal fade" tabindex="-1" role="dialog" id="profileDetails">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+        <div class="modal-header modalHeaderColor">
+	        <button type="button" class="close modalCloseColor" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" style="color: white;">&times;</span></button>
+	        <h4 class="modal-title" id="gridSystemModalLabel"><?php adminInfo("full_name"); ?>'s Profile</h4>
+      	</div>
+
+      	<div class="modal-body">
+	        <form action="" method="POST" enctype="multipart/form-data">
+
+	       	 <img src="<?php adminInfo('photo'); ?>" class="profileDetailsPhoto">
+	        	<div class="laman">	
+
+	        	<div class="leftDetails" style="width: 40%">
+	        		<p>Last Name :</p>
+	        		<p>First Name :</p>
+	        		<p>Position :</p>
+	        		<p>Admin Type :</p>
+	        		<p>Username :</p>
+	        	</div>
+
+	        	<div class="rightDetails" style="width: 50%">
+	        		<p><?php adminInfo("last_name"); ?></p>
+	        		<p><?php adminInfo("first_name"); ?></p>
+	        		<p><?php adminInfo("position"); ?></p>
+	        		<p><?php adminInfo("admin_type"); ?></p>
+	        		<p><?php adminInfo("username"); ?></p>
+	        	</div>
+	        	</div>
+	    </div>
+	    <div>
+	        <button type="button" class="btn btn-default" data-dismiss="modal" style="visibility: hidden;">Close</button>
+	        </form>
+	        <div class="alert alert-info" style="margin: -20px 10px 10px 10px">
+  				<strong>Hello!</strong> Ask the Super Admin if you want to change this account details. Thank you!
+			</div>	
 	     </div>
     </div>
   </div>

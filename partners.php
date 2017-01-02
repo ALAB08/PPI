@@ -40,7 +40,7 @@
 					    <ul class="dropdown-menu" role="menu">
 					    	<li role="presentation"><a role="menuitem" tabindex="-1" data-toggle="modal" data-target="#partnerDetails<?php echo $id;?>">Details</a></li>
 						    <li role="presentation"><a role="menuitem" tabindex="-1" href="partnerUpdate.php?id=<?php echo $id;?>">Update</a></li>
-						    <li role="presentation"><a role="menuitem" tabindex="-1" data-toggle="modal" data-target="#partnerDelete<?php echo $id;?>">Remove</a></li>
+						    <li role="presentation"><a role="menuitem" tabindex="-1" data-toggle="modal" data-target="#partnerDelete<?php echo $id;?>" style="border-bottom: none">Remove</a></li>
 					    </ul>
 				    </div>
 				  

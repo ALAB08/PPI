@@ -19,7 +19,7 @@
 		<?php header2(); ?>
 		<div class="container">
 			<div class="leftSideSeminar">
-				<p>Add <span>Seminar</span></p><br>
+				<p>Create <span>Seminar</span></p><br>
 			<form action="" method="POST" enctype="multipart/form-data">
                 <div class="preview">
 					<div class="logoBox">

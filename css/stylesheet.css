@@ -1,4 +1,8 @@
 
+*{
+	font-family: Century Gothic;
+}
+
 body.gray{
 	background-image: url(../img/PPI_Home_Background.jpg);
 	background-size: 100% 100%;
@@ -336,6 +340,7 @@ body.goldNoBorder{
 	height: 30px;
 	padding: 0px 15px;
 	box-shadow: 3px 3px 8px rgba(1,1,1,.6);
+	background-color: transparent;
 }
 
 /* PARTNERS PAGE */
@@ -354,7 +359,7 @@ body.goldNoBorder{
 	position: relative;
 	top: -135px;
 	right: -15px;
-	z-index: 1000000;
+	z-index: 2;
 	float: left;
 	width: 5%;
 }
@@ -423,7 +428,13 @@ body.goldNoBorder{
 
 .leftSide p{
 	float: left;
-	font-size: 55px;
+	font-size: 75px;
+	font-family: AardvarkBold;
+}
+
+.leftSide p span{
+	font-size: 50px;
+	margin-left: -20px;
 }
 
 .preview{
@@ -501,7 +512,7 @@ body.goldNoBorder{
 	width: 50%;
 	height: 100px;
 	float: left;
-	padding-top: 30px;
+	padding-top: 45px;
 }
 
 .fieldName{
@@ -525,7 +536,7 @@ body.goldNoBorder{
 	float: left;
 }
 
-.textBoxes input[type="text"], .textBoxes input[type="date"]{
+.textBoxes input[type="text"]{
 	width: 100%;
 	border-radius: 5px;
 	border: none;
@@ -533,6 +544,7 @@ body.goldNoBorder{
 	height: 38px;
 	padding: 0px 10px;
 	box-shadow: 1px 1px 1px 1px black;
+	float: left;
 }
 
 .cmsButtons{
@@ -701,7 +713,7 @@ body.goldNoBorder{
 	position: relative;
 	top: -335px;
 	right: -15px;
-	z-index: 1000000;
+	z-index: 2;
 	float: left;
 	width: 5%;
 }
@@ -724,6 +736,12 @@ body.goldNoBorder{
 
 .leftSideSeminar p{
 	float: left;
+	font-size: 75px;
+	font-family: AardvarkBold;
+}
+
+.leftSideSeminar p span{
+	margin-left: -20px;
 	font-size: 50px;
 }
 
@@ -732,7 +750,7 @@ body.goldNoBorder{
 	width: 55%;
 	height: 100px;
 	float: left;
-	padding-top: 30px;
+	padding-top: 45px;
 }
 
 .fieldName{
@@ -799,6 +817,12 @@ body.goldNoBorder{
 	float: left;
 }
 
+.previewBanner2 img{
+	border-radius: 10px;
+	width: 100%;
+	height: 350px;
+}
+
  .logo2{
  	width: 100%;
  	height: 100px;
@@ -807,6 +831,7 @@ body.goldNoBorder{
  	float: left;
  	margin-bottom: 20px;
  }
+
 
 .seminarTitle{
 	text-align: center;
@@ -828,6 +853,7 @@ body.goldNoBorder{
 	border: none;
 	box-shadow: 1px 1px 1px 1px black;
 	padding-left: 15px;
+	background-color: transparent;
 }
 
 .docuButtons{
@@ -873,20 +899,140 @@ body.goldNoBorder{
 }
 
 .leftDetails{
-	width: 46%;
+	width: 30%;
 	float: left;
 	font-weight: bold;
 	margin-right: 20px;
 }
 
 .rightDetails{
-	width: 45%;	
+	width: 60%;	
 	float: left;
 }
 
 .laman{
 	width: 100%;
+}
 
+.profileDetailsPhoto{
+	width: 150px;
+	height: 150px;
+	display: block;
+	margin: 0 auto;
+	border: none;
+	border-radius: 50%;
+	box-shadow: 1px 1px 4px 1px black;
+	margin-bottom: 20px;
+}
+
+.boxShadow{
+	box-shadow: 0px 0px 8px 1px black;
+}
+
+.dropdown-menu:before {
+  position: absolute;
+  top: -7px;
+  left: 9px;
+  display: inline-block;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid #ccc;
+  border-left: 7px solid transparent;
+  border-bottom-color: rgba(0, 0, 0, 0.2);
+  content: '';
+}
+
+.dropdown-menu:after {
+  position: absolute;
+  top: -6px;
+  left: 10px;
+  display: inline-block;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid #4A452A;
+  border-left: 6px solid transparent;
+  content: '';
 }
 
 
+.dropdown-menu.arrow:before {
+  position: absolute;
+  top: -7px;
+  left: 9px;
+  display: inline-block;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid #ccc;
+  border-left: 7px solid transparent;
+  border-bottom-color: rgba(0, 0, 0, 0.2);
+  content: '';
+}
+
+.dropdown-menu.arrow:after {
+  position: absolute;
+  top: -6px;
+  left: 10px;
+  display: inline-block;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid #4A452A;
+  border-left: 6px solid transparent;
+  content: '';
+}
+
+.dropdown-menu.arrow.arrow-right:before,
+.dropup .dropdown-menu.arrow.arrow-right:before {
+  top: 21px;
+  right: -10px;
+  left: auto;
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+.dropdown-menu.arrow.arrow-right:after,
+.dropup .dropdown-menu.arrow.arrow-right:after {
+  top: 20px;
+  right: -10px;
+  left: auto;
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.dropdown ul{
+	background-color: #4A452A;
+}
+
+.dropdown ul li a{
+	background-color: #4A452A;
+	color: white;
+	border-bottom: 1px solid #867A65;
+}
+
+.dropdown ul li a:hover{
+	background-color: #352C1E;
+	color: white;
+}
+
+.dropdowns ul{
+	background-color: #4A452A;
+	margin-left: 20px;
+	margin-bottom: 20px;
+}
+
+.dropdowns ul li a{
+	background-color: #4A452A;
+	color: white;
+	border-bottom: 1px solid #867A65;
+}
+
+.dropdowns ul li a:hover{
+	background-color: #352C1E;
+	color: white;
+}
+
+.dark{
+	background-color: #352C1E;
+	border: none;
+	border-radius: 5px;
+	height: 30px;
+	color: white;
+}
+
+.dark:hover{
+	color: white;
+}

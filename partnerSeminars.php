@@ -52,13 +52,13 @@
 							    <ul class="dropdown-menu" role="menu">
 							    	<li role="presentation"><a role="menuitem" tabindex="-1" data-toggle="modal" data-target="#seminarDetails<?php echo $id; ?>">Details</a></li>
 								    <li role="presentation"><a role="menuitem" tabindex="-1" href="seminarUpdate.php?id=<?php echo $id; ?>">Update</a></li>
-								    <li role="presentation"><a role="menuitem" tabindex="-1" data-toggle="modal" data-target="#seminarDelete<?php echo $id; ?>">Remove</a></li>
+								    <li role="presentation"><a role="menuitem" tabindex="-1" data-toggle="modal" data-target="#seminarDelete<?php echo $id; ?>" style="border-bottom: none">Remove</a></li>
 							    </ul>
 						    </div>
 
-						    <div class="dropdownsa">
-							    <button class="btn btn-warning dropdown-toggle width" type="button" id="documentation" data-toggle="dropdown">Documentation
-							    <span class="caret"></span></button>
+						    <div class="dropdowns">
+							    <button class="dark dropdown-toggle width" type="button" id="documentation" data-toggle="dropdown">Documentation
+							    </button>
 							    
 							    <ul class="dropdown-menu" role="menu" aria-labelledby="documentation">
 
@@ -90,7 +90,7 @@
 							    		<a role="menuitem" tabindex="-1" href="#">Documentator</a>
 							    	</li>
 							    	<li role="presentation">
-							    		<a role="menuitem" tabindex="-1" href="#">Creatives</a>
+							    		<a role="menuitem" tabindex="-1" href="#" style="border-bottom: none">Creatives</a>
 							    	</li>   
 							    </ul>
 

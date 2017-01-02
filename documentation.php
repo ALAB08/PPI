@@ -30,7 +30,7 @@
 				</div>
 				
 				<div class="previewBanner2">
-					<img src="<?php echo $result['seminar_banner']; ?>" width="100%" height="350px">
+					<img src="<?php echo $result['seminar_banner']; ?>">
 				</div>
 			</div>
 
@@ -70,7 +70,7 @@
 		</div>
 		
 	</div>	
-	<?php floatButtonsPartnerMenu() ?>
+	<?php floatButtonsDocumentation() ?>
 </body>
 
 </html>

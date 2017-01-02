@@ -18,7 +18,7 @@
 		<?php header2(); ?>
 		<div class="container">
 			<div class="leftSide">
-				<p>Add <span>Partner</span></p><br>
+				<p>Append <span>Partner</span></p><br>
 			<form action="" method="POST" enctype="multipart/form-data">
 				<div class="preview">
 					<div class="logoBox">
