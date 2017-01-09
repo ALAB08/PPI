@@ -8,7 +8,7 @@
 	<title>PPI | Home</title>
 	<?php include("head.php"); ?>
 	<?php include("connection.php"); ?>
-	<?php unset($_SESSION['id']); unset($_SESSION['super_id']); ?>
+	<?php //unset($_SESSION['id']); unset($_SESSION['super_id']); ?>
 
 </head>
 
@@ -22,6 +22,7 @@
 			<div class="index_buttons">
 				<center>
 					<button onclick="window.location.href='login.php'" class="left">Login</button>
+
 					<button type="button" data-toggle="modal" data-target="#verifyAccess" class="right">Create Account</button>
 				</center>
 			</div>
@@ -31,3 +32,5 @@
 </body>
 
 </html>
+
+<?php include("modals.php"); ?>

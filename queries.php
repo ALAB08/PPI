@@ -132,10 +132,8 @@
 			
 
 			$target_path = "user_images/".$imagename;
-			$path="/Applications/XAMPP/xamppfiles/htdocs/ppi/";
-			
-    		//$path="C://xampp/htdocs/";
-    		//$target_path = "ppi/images_data".$imagename;
+			//$path="/Applications/XAMPP/xamppfiles/htdocs/ppi/";
+			$path="C:/xampp/htdocs/ppi/";
 
   			if(move_uploaded_file($temp_name,$path.$target_path)) {
 
@@ -191,7 +189,8 @@
 			$imagenameLogo=$_FILES["partnerLogoImage"]["name"];
 
 			$target_pathLogo = "partner_images/".$imagenameLogo;
-			$pathLogo ="/Applications/XAMPP/xamppfiles/htdocs/ppi/";
+			//$pathLogo ="/Applications/XAMPP/xamppfiles/htdocs/ppi/";
+			$pathLogo = "C:/xampp/htdocs/ppi/";
 			//End of Logo Image
 
 			//Banner Image
@@ -202,11 +201,9 @@
 			$imagenameBanner=$_FILES["partnerBannerImage"]["name"];
 
 			$target_pathBanner = "partner_images/".$imagenameBanner;
-			$pathBanner="/Applications/XAMPP/xamppfiles/htdocs/ppi/";
+			//$pathBanner="/Applications/XAMPP/xamppfiles/htdocs/ppi/";
+			$pathBanner = "C:/xampp/htdocs/ppi/";
 			//End of Banner Image
-			
-    		//$path="C://xampp/htdocs/";
-    		//$target_path = "ppi/images_data".$imagename;
 
   			if(move_uploaded_file($temp_nameBanner,$pathBanner.$target_pathBanner) && move_uploaded_file($temp_nameLogo, $pathLogo.$target_pathLogo)){
 
@@ -275,7 +272,8 @@
 			$imagenameLogo=$_FILES["seminarLogoImage"]["name"];
 
 			$target_pathLogo = "partner_images/".$imagenameLogo;
-			$pathLogo ="/Applications/XAMPP/xamppfiles/htdocs/ppi/";
+			//$pathLogo ="/Applications/XAMPP/xamppfiles/htdocs/ppi/";
+			$pathLogo = "C://xampp/htdocs/ppi/";
 			//End of Logo Image
 
 			//Banner Image
@@ -286,12 +284,10 @@
 			$imagenameBanner=$_FILES["seminarBannerImage"]["name"];
 
 			$target_pathBanner = "partner_images/".$imagenameBanner;
-			$pathBanner="/Applications/XAMPP/xamppfiles/htdocs/ppi/";
+			//$pathBanner="/Applications/XAMPP/xamppfiles/htdocs/ppi/";
+			$pathBanner = "C://xampp/htdocs/ppi/";
 			//End of Banner Image
 			
-    		//$path="C://xampp/htdocs/";
-    		//$target_path = "ppi/images_data".$imagename;
-
   			if(move_uploaded_file($temp_nameBanner,$pathBanner.$target_pathBanner) && move_uploaded_file($temp_nameLogo, $pathLogo.$target_pathLogo)){
 
   				//$date_added = now();
@@ -403,7 +399,8 @@
 			$imagenameLogo=$_FILES["partnerLogoImage"]["name"];
 
 			$target_pathLogo = "partner_images/".$imagenameLogo;
-			$pathLogo ="/Applications/XAMPP/xamppfiles/htdocs/ppi/";
+			//$pathLogo ="/Applications/XAMPP/xamppfiles/htdocs/ppi/";
+			$pathLogo = "C://xampp/htdocs/ppi/";
 			//End of Logo Image
 
 			//Banner Image
@@ -414,11 +411,10 @@
 			$imagenameBanner=$_FILES["partnerBannerImage"]["name"];
 
 			$target_pathBanner = "partner_images/".$imagenameBanner;
-			$pathBanner="/Applications/XAMPP/xamppfiles/htdocs/ppi/";
+			//$pathBanner="/Applications/XAMPP/xamppfiles/htdocs/ppi/";
+			$pathBanner = "C://xampp/htdocs/ppi/";
 			//End of Banner Image
 			
-    		//$path="C://xampp/htdocs/";
-    		//$target_path = "ppi/images_data".$imagename;
 
   			if(move_uploaded_file($temp_nameBanner,$pathBanner.$target_pathBanner) && move_uploaded_file($temp_nameLogo, $pathLogo.$target_pathLogo)){
 
