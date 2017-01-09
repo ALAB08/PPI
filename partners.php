@@ -15,10 +15,34 @@
 	<div class="container-fluid">
 		<?php header2(); ?>
 		<div class="container">
-			<center><h1>Partners</h1></center>
-			<form action="" method="POST">
-				<input type="text" class="search" placeholder="Search">
+			<center><h1 class="etchOne">Partners</h1></center>
+			<form action="" method="POST" enctype="multipart/form-data">
+				<select name="orderBy" class="orderBy">
+					<option value="all">All</option>
+					<option value="partner_name">Name</option>
+					<option value="contact_person">Contact Person</option>
+					<option value="contact_number">Contact Number</option>
+					<option value="address">Address</option>
+					<option value="email">Email</option>
+					<option value="website">Website</option>
+					<option value="partnership_date">Partnership Date</option>
+					<option value="date_added">Date Aded</option>
+				</select>
 
+				<input type="text" class="search" placeholder="Search from partners..." name="looking">
+
+				<button type="submit" name="search" style="visibility: hidden;">Search</button>
+			</form>
+				
+				<?php
+					if(isset($_POST['search'])){
+						$looking = $_POST['looking'];
+						$orderBy = $_POST['orderBy'];
+						echo "<script>window.location.href='searchPartners.php?search=$looking&&order=$orderBy'</script>";
+					}
+				?>
+
+			<form action="" method="POST" enctype="multipart/form-data">
 			<?php
 				$sql = "SELECT * FROM tbl_partner";
 				$query = mysqli_query($connection, $sql);

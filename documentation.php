@@ -19,6 +19,7 @@
 		<div class="container">
 
 		<?php
+			$_SESSION['seminar_id'] = $_GET['id'];
 			$sql = "SELECT * from tbl_seminars WHERE id='".$_GET['id']."'";
 			$query = mysqli_query($connection, $sql);
 			$result = mysqli_fetch_assoc($query);
@@ -36,7 +37,7 @@
 
 			<div class="rightSideDetails">
 				<div class="seminarTitle">
-					<h3><?php echo $result['title_seminar']; ?></h3>
+					<h3 class="etchTwo"><?php echo $result['title_seminar']; ?></h3>
 				</div>
 
 				<div class="hanap2">
@@ -46,21 +47,21 @@
 				<div class="docuButtons">
 					<div class="row-grid">
 						<div class="col-sm-6 col-md-6">
-							<button type="button" onclick="location.href=''">Programmes</button>
-							<button type="button" onclick="location.href=''">Attendees</button>
-							<button type="button" onclick="location.href=''">Presentations</button>
-							<button type="button" onclick="location.href=''">Actual Expense</button>
-							<button type="button" onclick="location.href=''">Evaluation Report</button>
+							<button type="button" onclick="location.href='docuParts.php?docu=Programme'">Programmes</button>
+							<button type="button" onclick="location.href='docuParts.php?docu=Attendees'">Attendees</button>
+							<button type="button" onclick="location.href='docuParts.php?docu=Presentations'">Presentations</button>
+							<button type="button" onclick="location.href='docuParts.php?docu=Actual Expense'">Actual Expense</button>
+							<button type="button" onclick="location.href='docuParts.php?docu=Evaluation Report'">Evaluation Report</button>
 						</div>
 					</div>
 
 					<div class="row-grid">
 						<div class="col-sm-6 col-md-6">
-							<button type="button" onclick="location.href=''">Group Work</button>
-							<button type="button" onclick="location.href=''">Venue</button>
-							<button type="button" onclick="location.href=''">Resource Person</button>
-							<button type="button" onclick="location.href=''">Documentor</button>
-							<button type="button" onclick="location.href=''">Creatives</button>
+							<button type="button" onclick="location.href='docuParts.php?docu=Group Work'">Group Work</button>
+							<button type="button" onclick="location.href='docuParts.php?docu=Venue'">Venue</button>
+							<button type="button" onclick="location.href='docuParts.php?docu=Resource Person'">Resource Person</button>
+							<button type="button" onclick="location.href='docuParts.php?docu=Documentator'">Documentor</button>
+							<button type="button" onclick="location.href='docuCreatives.php?docu=Creatives'">Creatives</button>
 						</div>
 					</div>
 

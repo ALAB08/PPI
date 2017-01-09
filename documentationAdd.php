@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+	<!DOCTYPE html>
 
 <html>
 
@@ -19,7 +19,7 @@
 		<?php header2(); ?>
 		<div class="container">
 			<div class="leftSideSeminar">
-				<p>Create <span>Seminar</span></p><br>
+				<p>Add <span>Programme</span></p><br>
 			<form action="" method="POST" enctype="multipart/form-data">
                 <div class="preview">
 					<div class="logoBox">
@@ -38,7 +38,7 @@
 			<div class="rightSideSeminar">
 				<div class="fieldName">
 					<ul>
-						<li>Title of Seminar :</li>
+						<li>File Name :</li>
 						<li>Period Covered :</li>
 						<li>Areas :</li>
 						<li>Remarks :</li>
@@ -65,9 +65,9 @@
 						<option value="Incomplete" selected>Inomplete</option>
 					</select>
 
-					<input type="text" name="luzon" id="luzonVenue" placeholder="" ="None">
-					<input type="text" name="visayas" id="visayasVenue" placeholder="None">
-					<input type="text" name="mindanao" id="mindanaoVenue" placeholder="None">
+					<input type="text" name="luzon" id="luzonVenue" value="None">
+					<input type="text" name="visayas" id="visayasVenue" value="None">
+					<input type="text" name="mindanao" id="mindanaoVenue" value="None">
 
 					<?php areas(); ?>
 

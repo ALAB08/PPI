@@ -31,11 +31,11 @@
 					<div class="logoBox">
 						<img id="partnerLogoImagePreview" class="logoPreview" src="<?php echo $result['partner_logo']; ?>">
 						<img id="partnerLogo2ImagePreview" class="logoPreview" src="<?php echo $result['partner_logo']; ?>">
-						<span class="btn btn-file two">Partner Logo<input type="file" name="partnerLogoImage" id="uploadImagePartnerLogo" onchange="PreviewImagePartnerLogo();" ></span>
+						<span class="btn btn-file two" style="color: white">Partner Logo<input type="file" name="partnerLogoImage" id="uploadImagePartnerLogo" onchange="PreviewImagePartnerLogo();" ></span>
 					</div>
                 	
                 	<img id="partnerBannerImagePreview" class="bannerPreview" src="<?php echo $result['partner_banner']; ?>">
-                	<span class="btn btn-file">
+                	<span class="btn btn-file" style="color: white">
                 	Partner Banner<input type="file" name="partnerBannerImage" id="uploadImagePartnerBanner"onchange="PreviewImagePartnerBanner();" >
                 	</span>
                 </div>

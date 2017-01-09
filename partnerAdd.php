@@ -25,12 +25,12 @@
 						<img id="partnerLogoImagePreview" class="logoPreview">
 						<img id="partnerLogo2ImagePreview" class="logoPreview">
 						
-						<span class="btn btn-file two">Partner Logo<input type="file" name="partnerLogoImage" id="uploadImagePartnerLogo" required onchange="PreviewImagePartnerLogo();" ></span>
+						<span class="btn btn-file two" style="color: white">Partner Logo<input type="file" name="partnerLogoImage" id="uploadImagePartnerLogo" required onchange="PreviewImagePartnerLogo();" ></span>
 					</div>
                 	
                 	<img id="partnerBannerImagePreview" class="bannerPreview">
                 	
-                	<span class="btn btn-file">
+                	<span class="btn btn-file" style="color: white">
                 	Partner Banner<input type="file" name="partnerBannerImage" id="uploadImagePartnerBanner" required onchange="PreviewImagePartnerBanner();" >
                 	</span>
                 </div>

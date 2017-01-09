@@ -2,12 +2,12 @@
 
 <html>
 
-	<?php session_start(); ?>
+<?php session_start(); ?>
+
 <head>
 	<title>PPI | Home</title>
 	<?php include("head.php"); ?>
 	<?php include("connection.php"); ?>
-	<?php include("modals.php"); ?>
 	<?php unset($_SESSION['id']); unset($_SESSION['super_id']); ?>
 
 </head>

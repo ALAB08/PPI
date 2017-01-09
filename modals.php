@@ -57,7 +57,7 @@
 	        	</div>
 
 	        	<?php
-	        		$partnership_date = $result['pertnership_date'];
+	        		$partnership_date = $result['partnership_date'];
 
 	        		$partnership_date=date_format((date_create($partnership_date)), "F d, Y");
 	        	?>
@@ -129,7 +129,7 @@
 	        		<p>Remarks :</p>
 	        		<p>Luzon Venue :</p>
 	        		<p>Visayas Venue :</p>
-	        		<p>Mindanao Venu :</p>
+	        		<p>Mindanao Venue :</p>
 	        	</div>
 
 	        	<?php 
@@ -228,6 +228,36 @@
 	        <div class="alert alert-info" style="margin: -20px 10px 10px 10px">
   				<strong>Hello!</strong> Ask the Super Admin if you want to change this account details. Thank you!
 			</div>	
+	     </div>
+    </div>
+  </div>
+</div>
+
+<!--============== END =====================-->
+
+<!-- Add Documentation -->
+
+<div class="modal fade" tabindex="-1" role="dialog" id="addDocu">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+        <div class="modal-header modalHeaderColor">
+	        <button type="button" class="close modalCloseColor" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" style="color: white;">&times;</span></button>
+	        <h4 class="modal-title" id="gridSystemModalLabel">Add Programme</h4>
+      	</div>
+
+      	<div class="modal-body">
+	        <form action="" method="POST" enctype="multipart/form-data">
+	        Other File: <input type="file" name="otherFile" style="margin-bottom: 10px">
+	        Pdf File: <input type="file" name="pdfFile" style="margin-bottom: 10px">
+	        Remarks: <br><select name="remarks">
+	        	<option value="Incomplete">Incomplete</option>
+	        	<option vlaue="Complete">Complete</option>
+	        </select>
+	    </div>
+	    <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        <button type="submit" class="btn customSave" name="addDocumentation" style="color: white;">SAVE</button>
+	        </form>
 	     </div>
     </div>
   </div>

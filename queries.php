@@ -248,9 +248,24 @@
 			$period_to = $_POST['period_to'];
 			$areas = $_POST['areas'];
 			$remarks = $_POST['remarks'];
-			$luzon = $_POST['luzon'];
-			$visayas = $_POST['visayas'];
-			$mindanao = $_POST['mindanao'];
+
+			if($areas=="Luzon Only"){
+				$luzon = $_POST['luzon'];
+				$visayas = "None";
+				$mindanao = "None";
+			}else if($areas=="Visayas Only"){
+				$luzon = "None";
+				$visayas = $_POST['visayas'];
+				$mindanao = "None";
+			}else if($areas=="Mindanao Only"){
+				$luzon = "None";
+				$visayas = "None";
+				$mindanao = $_POST['mindanao'];
+			}else{
+				$luzon = $_POST['luzon'];
+				$visayas = $_POST['visayas'];
+				$mindanao = $_POST['mindanao'];
+			}
 
 			//Logo Image
 			$file_nameLogo=$_FILES["seminarLogoImage"]["name"];
@@ -513,6 +528,75 @@
 					//echo "<script>window.location.href='partnerSeminars.php';</script>";  
 				}else{
 					echo "<script>alert('Failed to update seminar.')</script>";
+					echo mysqli_error($connection);
+				}
+			}
+     	}
+	}
+?>
+
+
+
+<?php 
+	if(isset($_POST['addDocumentation'])){
+
+		if (empty($_FILES["otherFile"]["name"]) && empty($_FILES["pdfFile"]["name"])){
+    		echo "";
+		}else{
+      		function GetImageExtension($imagetype){
+       			if(empty($imagetype)) return false;
+       				switch($imagetype){
+			           case 'image/bmp': return '.bmp';
+			           case 'image/gif': return '.gif';
+			           case 'image/jpeg': return '.jpg';
+			           case 'image/png': return '.png';
+			           case 'application/pdf': return '.pdf';
+			           case 'application/Microsoft Word': return '.docx';
+
+			           default: return false;
+       				}
+     		}
+
+			$docu_type = $_GET['docu'];
+			$partner_id = $_SESSION['partner_id'];
+			$seminar_id = $_SESSION['seminar_id'];
+
+			//Other File
+			$file_nameOther=$_FILES["otherFile"]["name"];
+			$temp_nameOther=$_FILES["otherFile"]["tmp_name"];
+			$typeOther=$_FILES["otherFile"]["type"];
+			$extOther= GetImageExtension($typeOther);
+			$nameOther=$_FILES["otherFile"]["name"];
+
+			$target_pathOther = "documentation_upload/".$nameOther;
+			$pathOther ="/Applications/XAMPP/xamppfiles/htdocs/ppi/";
+			//End of Other File
+
+			//Pdf File
+			$file_namePdf=$_FILES["pdfFile"]["name"];
+			$temp_namePdf=$_FILES["pdfFile"]["tmp_name"];
+			$typePdf=$_FILES["pdfFile"]["type"];
+			$extPdf= GetImageExtension($typePdf);
+			$namePdf=$_FILES["pdfFile"]["name"];
+
+			$target_pathPdf = "documentation_upload/".$namePdf;
+			$pathPdf="/Applications/XAMPP/xamppfiles/htdocs/ppi/";
+			//End of Pdf File
+			
+    		//$path="C://xampp/htdocs/";
+    		//$target_path = "ppi/images_data".$imagename;
+
+  			if(move_uploaded_file($temp_nameOther,$pathOther.$target_pathOther) && move_uploaded_file($temp_namePdf, $pathPdf.$target_pathPdf)){
+
+				$sql = "INSERT INTO tbl_documentation (partner_id, seminar_id, docu_type, other_file, other_name, other_ext, pdf_file, pdf_name, pdf_ext) VALUES('".$partner_id."', '".$seminar_id."', '".$docu_type."', '".$target_pathOther."', '".$nameOther."','".$extOther."', '".$target_pathPdf."', '".$namePdf."', '".$extPdf."')";
+				$query = mysqli_query($connection, $sql);
+
+				if($query){
+					echo "<script>alert('File successfully uploaded.')</script>";
+					//echo "<script>window.location.href='login.php';</script>";
+					echo "<script>window.location.href=''</script>";  
+				}else{
+					echo "<script>alert('Failed to add a partner.')</script>";
 					echo mysqli_error($connection);
 				}
 			}

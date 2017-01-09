@@ -23,11 +23,11 @@
 				</div>
 
 				<div class="partnerName">
-					<p>SEMINARS | <?php echo $_SESSION['partner_name']; ?></p>
+					<p><span class="etchOne">SEMINARS</span> | <?php echo $_SESSION['partner_name']; ?></p>
 				</div>
 
 				<div class="hanap">
-					<input type="text" placeholder="Search...">
+					<input type="text" class="search" placeholder="Search from seminars...">
 				</div>
 			</div>
 

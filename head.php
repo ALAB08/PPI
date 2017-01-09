@@ -8,7 +8,7 @@
 <?php
 	function footer(){
 ?>	
-		<p class="footer">Philippine Press Institute Database Beta. Copyright 2016</p>
+		<div class="footer"><p>Philippine Press Institute Database Beta. Copyright 2016</p></div>
 <?php
 	}
 ?>
@@ -241,6 +241,64 @@
 
 <?php
 	}
+?>
+
+<?php
+  function floatButtonsDocu(){
+?>
+    <div class="mini">
+      <div class="btn-group-sm hidden" id="mini-fab">
+      <?php $id = $_SESSION['seminar_id']; ?>
+       <a href="documentation.php?id=<?php echo $id ?>" class="btn btn-success btn-fab" data-toggle="tooltip" data-placement="left" data-original-title="Documentation" id="fourth">
+          <img src = "img/Manager.png"> 
+        </a>
+        <a data-toggle="modal" data-target="#addDocu" class="btn btn-warning btn-fab" data-toggle="tooltip" data-placement="left" data-original-title="Add Programme" id="third">
+          <img src = "img/Add.png">  
+        </a>
+        <a href="home.php" class="btn btn-danger btn-fab" data-toggle="tooltip" data-placement="left" data-original-title="Home" id="second">
+            <img src = "img/Home.png">
+        </a>
+      </div>
+
+      <div class="btn-group">
+        <a href="javascript:void(0)" class="btn btn-primary btn-fab" id="main">
+            <img src = "img/Menu.png">
+        </a>
+      </div>
+
+    </div>
+
+  <script type="text/javascript" src="js/index.js"></script>
+
+<?php
+  }
+?>
+
+<?php
+  function floatButtonsDoneSearchPartners(){
+?>
+    <div class="mini">
+      <div class="btn-group-sm hidden" id="mini-fab">
+        <a href="partners.php" class="btn btn-warning btn-fab" data-toggle="tooltip" data-placement="left" data-original-title="Done Search" id="third">
+          <img src = "img/Back.png"> 
+        </a>
+        <a href="home.php" class="btn btn-danger btn-fab" data-toggle="tooltip" data-placement="left" data-original-title="Home" id="second">
+            <img src = "img/Home.png">
+        </a>
+      </div>
+
+      <div class="btn-group">
+        <a href="javascript:void(0)" class="btn btn-primary btn-fab" id="main">
+            <img src = "img/Menu.png">
+        </a>
+      </div>
+
+    </div>
+
+  <script type="text/javascript" src="js/index.js"></script>
+
+<?php
+  }
 ?>
 
 

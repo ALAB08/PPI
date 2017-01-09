@@ -25,7 +25,7 @@
 				</center>
 			</div>
 			<form action="" method="POST">
-				<input type="text" class="search" placeholder="Search">
+				<input type="text" class="search ayos" placeholder="Search">
 			</form>
 		</div>
 		<?php footer(); ?>

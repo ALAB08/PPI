@@ -18,6 +18,7 @@
 		<?php header2(); ?>
 		<div class="container">
 			<?php 
+				$_SESSION['partner_id'] = $_GET['id'];
 				$sql = "SELECT * FROM tbl_partner WHERE id = '".$_GET['id']."'";
 				$query = mysqli_query($connection, $sql);
 				$result = mysqli_fetch_assoc($query);
@@ -33,7 +34,7 @@
 			
 			<div class="rightSideDetails">
 				<p><?php echo $_SESSION['partner_name'];?></p>
-				<input type="text" class="search" placeholder="Search">
+				<input type="text" class="search ayos" placeholder="Search from <?php echo $_SESSION['partner_name']; ?>...">
 				<div class="detailsButtons">
 					<button type="button" onclick="location.href='partnerSeminars.php'" class="seminarButton">SEMINARS</button>
 					<button type="button" onclick="location.href=''" class="awardsButton">AWARDS</button>

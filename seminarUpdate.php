@@ -31,11 +31,11 @@
 					<div class="logoBox">
 						<img id="seminarLogoImagePreview" class="logoPreview" src="<?php echo $result['seminar_logo']; ?>">
 						<img id="seminarLogo2ImagePreview" class="logoPreview" src="<?php echo $result['seminar_logo']; ?>">
-						<span class="btn btn-file two">Seminar Logo<input type="file" name="seminarLogoImage" id="uploadImageSeminarLogo" onchange="PreviewImageSeminarLogo();" ></span>
+						<span class="btn btn-file two" style="color: white">Seminar Logo<input type="file" name="seminarLogoImage" id="uploadImageSeminarLogo" onchange="PreviewImageSeminarLogo();" ></span>
 					</div>
                 	
                 	<img id="seminarBannerImagePreview" class="bannerPreview" src="<?php echo $result['seminar_banner']; ?>">
-                	<span class="btn btn-file">
+                	<span class="btn btn-file" style="color: white">
                 	Seminar Banner<input type="file" name="seminarBannerImage" id="uploadImageSeminarBanner" onchange="PreviewImageSeminarBanner();" >
                 	</span>
                 </div>
@@ -81,7 +81,7 @@
 
 				<div class="cmsButtons">
 					<button type="submit" class="btn-success" name="seminarUpdate">SAVE</button>
-					<button type="button" class="btn-warning" onclick="location.href=''">CANCEL</button>
+					<button type="button" class="btn-warning" onclick="location.href='partnerSeminars.php'">CANCEL</button>
 				</div>
 			</div>
 		</div>
