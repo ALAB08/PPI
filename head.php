@@ -29,7 +29,7 @@
         </div>
 
         <p style="font-size: 16px"><?php adminInfo("full_name") ?></p>
-        <p><?php adminInfo("position"); ?></p>  
+        <p><?php adminInfo("admin_type"); ?></p>  
       </div>
 
 
@@ -58,7 +58,7 @@
         </div>
 
 				<p style="font-size: 16px"><?php adminInfo("full_name") ?></p>
-				<p><?php adminInfo("position"); ?></p>	
+				<p><?php adminInfo("admin_type"); ?></p>	
 			</div>
 
 		</div>
